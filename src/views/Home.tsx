@@ -61,7 +61,8 @@ const MyForm: React.FC = () => {
           flexDirection: 'column',
           gap: '20px',
           alignItems: 'center',
-          marginTop: '70px'
+          marginTop: '70px',
+          '& .MuiTextField-root': { m: 1, width: '25ch' }
         }}
       >
         <Controller
@@ -96,6 +97,7 @@ const MyForm: React.FC = () => {
               label="Tuổi"
               type="number"
               {...field}
+              inputProps={{ min: 18, max: 65 }}
               error={errors.age ? true : false}
               helperText={errors.age ? errors.age.message : ''}
             />
