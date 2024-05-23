@@ -2,7 +2,8 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import Layout from './components/Layout';
-import Home from './views/Home';
+import BreedsList from './views/BreedsList';
+import Auth from './views/Auth';
 
 function ErrorFallback({ error, resetErrorBoundary }: any) {
   return (
@@ -25,8 +26,9 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/home" element={<Home />} />
+            <Route index element={<BreedsList />} />
+            <Route path="/list" element={<BreedsList />} />
+            <Route path="/login" element={<Auth />} />
           </Route>
         </Routes>
       </BrowserRouter>
